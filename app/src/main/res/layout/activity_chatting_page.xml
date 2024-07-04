@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chat.ChattingPageActivity"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/chat_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_white"
+        android:padding="8dp">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:paddingEnd="8dp"
+            app:tint="@color/txt_gray"/>
+
+        <cirqle.com.customLayout.CircularImageView
+            android:id="@+id/profilePic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/icon_person"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Name"
+            android:gravity="center_vertical"
+            android:textSize="17sp"
+            android:textColor="@color/txt_gray"
+            android:paddingStart="14dp"
+            android:fontFamily="@font/poppins_medium"
+            />
+    </LinearLayout>
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_below="@id/chat_appbar"
+       android:id="@+id/message_Rv"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginBottom="?attr/actionBarSize"/>
+    <EditText
+        android:id="@+id/send_message_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="110dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/layout_edittext_selector"
+        android:hint="message..."
+        android:padding="8dp"
+        android:paddingStart="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/disabled_gray"
+        android:layout_marginTop="10dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/send_btn"
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="2dp"
+        android:elevation="15dp"
+        app:lottie_autoPlay="false"
+        app:lottie_fileName="send_anim.json"
+        app:lottie_loop="false" />
+<!--    <ImageView-->
+<!--        android:id="@+id/send_btn"-->
+<!--        android:layout_width="45dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:src="@drawable/baseline_send_24"-->
+<!--        android:background="@drawable/circular_image_view"-->
+<!--        app:tint="@color/white"-->
+<!--        android:paddingStart="8dp"-->
+<!--        android:paddingEnd="5dp"/>-->
+
+
+
+</RelativeLayout>

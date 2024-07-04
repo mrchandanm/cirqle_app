@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="270dp"
+    android:layout_height="160dp"
+android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="11dp"
+        app:cardElevation="11dp"
+        android:background="@color/white"
+        app:cardUseCompatPadding="true">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/white"
+>
+       <ImageView
+           android:id="@+id/image"
+           android:layout_weight="2"
+           android:layout_width="match_parent"
+           android:layout_height="80dp"
+           android:layout_gravity="center_vertical"
+           android:src="@drawable/app_logo"
+           android:layout_marginStart="13dp"/>
+       <LinearLayout
+           android:layout_weight="1"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical"
+           android:padding="8dp">
+           <TextView
+               android:layout_weight="1"
+               android:id="@+id/price"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="5000"
+               android:textColor="@color/black"
+               android:textSize="25sp"
+               android:textStyle="bold"
+               android:drawableStart="@drawable/icon_currency_rupee"
+               android:drawableTint="@color/black"
+               android:drawablePadding="4dp"
+               android:layout_marginTop="5dp"
+               />
+           <TextView
+               android:layout_weight="1"
+               android:id="@+id/description"
+               android:padding="4dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Cycle 2 month old"
+               android:textSize="15sp"
+               android:textColor="@color/txt_gray" />
+           <TextView
+               android:layout_weight="1"
+               android:id="@+id/location"
+               android:layout_marginTop="4dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:drawableStart="@drawable/icon_location_on"
+               android:drawableTint="@color/black"
+               android:text="kalam"
+               android:textColor="@color/txt_gray"
+               android:drawablePadding="8dp"
+               android:textSize="15sp"/>
+       </LinearLayout>
+   </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

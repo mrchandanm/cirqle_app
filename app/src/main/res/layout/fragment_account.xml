@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Account.AccountFragment"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+            <!--(for whatsapp like) "scroll|snap|exitUntilCollapsed|enterAlways" -->
+            <!--******************************************************-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:orientation="vertical">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@color/divider_gray"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="@color/white"
+                        android:gravity="center">
+                        <RelativeLayout
+                            android:id="@+id/updateProfilePic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            >
+                            <cirqle.com.customLayout.CircularImageView
+                                android:id="@+id/profilePic"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/icon_person" />
+
+                            <ImageView
+                                android:id="@+id/editIcon"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/baseline_add_a_photo_24"
+                                android:layout_alignRight="@id/profilePic"
+                                android:layout_alignBottom="@id/profilePic"
+                                android:padding="8dp"
+                                android:layout_marginRight="-4dp"
+                                android:layout_marginBottom="-4dp"
+                                app:tint="@color/txt_gray"
+                                android:background="@drawable/circular_image_view"/>
+                        </RelativeLayout>
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="8dp"
+                            >
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Hello,"
+                                android:textSize="13sp"
+                                android:textColor="@color/dark_txt_gray"
+                                android:fontFamily="@font/poppins_medium"
+                                android:padding="2dp"/>
+
+                            <TextView
+                                android:id="@+id/name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Chandan Mahato"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textSize="18sp"
+                                android:padding="2dp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="4dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Phone :"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:textColor="@color/dark_txt_gray"
+                                    android:textSize="13sp"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/phone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="8dp"
+                                    android:text="6289284774"
+                                    android:fontFamily="@font/poppins_medium"
+                                    android:textColor="@color/dark_txt_gray"
+                                    android:textSize="15sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/collegeName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/icon_location_on"
+                                android:drawableTint="@color/dark_txt_gray"
+                                android:text="Indian Institute of Technology, Patna"
+                                android:textColor="@color/dark_txt_gray"
+                                android:padding="2dp"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:drawablePadding="4dp"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:background="@color/divider_gray"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@color/white"
+                        >
+                        <TextView
+                            android:id="@+id/complaint"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:text="Complaint"
+                            android:textSize="13sp"
+                            android:textColor="@color/dark_txt_gray"
+                            android:padding="8dp"
+                            android:drawableStart="@drawable/baseline_report_gmailerrorred_24"
+                            android:drawablePadding="20dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
+                            android:drawableTint="@color/txt_gray"
+                            android:gravity="center_vertical"
+                            />
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/divider_gray"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"/>
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/logout_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:text="Logout"
+                            android:textSize="13sp"
+                            android:textColor="@color/dark_txt_gray"
+                            android:padding="8dp"
+                            android:drawableStart="@drawable/baseline_logout_24"
+                            android:drawablePadding="20dp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
+                            android:drawableTint="@color/txt_gray"
+                            android:gravity="center_vertical"
+                            />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:background="@color/divider_gray"/>
+
+                </LinearLayout>
+
+                <!-- *************************Tab************************-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    app:layout_behavior=".StickyLayoutBehavior"
+                    >
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="filter"
+                        android:textSize="13sp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:textColor="@color/txt_gray"
+                        android:drawableStart="@drawable/baseline_filter_list_24"
+                        android:fontFamily="@font/poppins_medium"/>
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/light_gray"/>
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/myOrders"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:text="My Orders"
+                                android:textSize="13sp"
+                                android:textColor="@color/primary_secondary"
+                                android:gravity="center"
+                                android:padding="2dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:layout_marginEnd="2dp"/>
+                            <TextView
+                                android:id="@+id/myFunFeed"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:text="My Fun Feeds"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="@color/primary_secondary"
+                                android:gravity="center"
+                                android:padding="2dp"/>
+                            <TextView
+                                android:id="@+id/myDoubtPost"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:text="My Doubt Post"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="@color/primary_secondary"
+                                android:gravity="center"
+                                android:padding="2dp"/>
+                            <TextView
+                                android:id="@+id/myBuyAndSell"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:text="My Buy &amp; Sell Post"
+                                android:textSize="13sp"
+                                android:textColor="@color/primary_secondary"
+                                android:gravity="center"
+                                android:padding="2dp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:layout_marginEnd="2dp"/>
+                            <TextView
+                                android:id="@+id/myLostPost"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:text="My Lost Post"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="@color/primary_secondary"
+                                android:gravity="center"
+                                android:padding="2dp"
+                                android:layout_marginEnd="2dp"/>
+                            <TextView
+                                android:id="@+id/myFoundPost"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:text="My Found Post"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:textColor="@color/primary_secondary"
+                                android:gravity="center"
+                                android:padding="2dp"
+                                android:layout_marginEnd="2dp"/>
+
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+                <!-- **************************Tab************************-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_gray"/>
+            </LinearLayout>
+            <!--******************************************************-->
+
+            <!--          ***********  searchBar***************-->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                app:popupTheme="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="8dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your Profile"
+                        android:textSize="20sp"
+                        android:textColor="@color/txt_gray"/>
+                </LinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+            <!--          ***********  searchBar***************-->
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+<!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+<!--        android:id="@+id/swipeRefreshLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:shimmer_auto_start="true"
+                    app:shimmer_base_alpha="0.7"
+                    app:shimmer_highlight_alpha="0.9"
+                    app:shimmer_duration="800"
+                    android:visibility="gone">
+
+                    <!-- Your loading skeleton layout -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:background="@android:color/darker_gray"
+                            android:layout_marginBottom="8dp"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:background="@android:color/darker_gray"
+                            android:layout_marginBottom="8dp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:background="@android:color/darker_gray"
+                            android:layout_marginBottom="8dp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:background="@android:color/darker_gray"
+                            android:layout_marginBottom="8dp"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:background="@android:color/darker_gray"
+                            android:layout_marginBottom="8dp"/>
+
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+            </LinearLayout>
+
+
+
+        </androidx.core.widget.NestedScrollView>
+<!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

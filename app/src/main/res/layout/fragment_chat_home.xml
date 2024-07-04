@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Chat.ChatHomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            >
+
+            <!--(for whatsapp like) "scroll|snap|exitUntilCollapsed|enterAlways" -->
+            <!--******************************************************-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="?attr/actionBarSize"
+                >
+
+                <!-- **************************Tab************************-->
+                <LinearLayout
+                    android:id="@+id/tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <EditText
+                            android:id="@+id/search_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical"
+                            android:layout_weight="13"
+                            android:stateListAnimator="@drawable/edittext_elevator"
+                            android:hint="search"
+                            android:textColor="@color/black"
+                            android:padding="8dp"
+                            android:textColorHint="@color/txt_gray"
+                            android:background="@drawable/et_rounded_corner_background"
+                            android:drawableStart="@drawable/icon_search"
+                            android:drawableTint="@color/txt_gray"
+                            android:drawablePadding="8dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_gray"/>
+                </LinearLayout>
+                <!-- **************************Tab************************-->
+            </RelativeLayout>
+            <!--******************************************************-->
+
+            <!--          ***********  searchBar***************-->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+
+                android:popupTheme="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Chats"
+                   android:fontFamily="@font/poppins_medium"
+                   android:textStyle="bold"
+                   android:textColor="@color/chat_primary"
+                   android:textSize="22sp" />
+            </androidx.appcompat.widget.Toolbar>
+            <!--          ***********  searchBar***************-->
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--    ***************Main Scroll View**************-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+       app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_rv"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/layout_chat_rv_item"/>
+
+
+    </androidx.core.widget.NestedScrollView>
+    <!--    ***************Main Scroll View**************-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout >

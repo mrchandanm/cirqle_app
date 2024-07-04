@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/navHome"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"
+        />
+    <item android:id="@+id/nav_chat"
+        android:title="Chat"
+        android:icon="@drawable/baseline_chat_24"
+        />
+    <item android:id="@+id/nav_accounnt"
+        android:title="Accounnt"
+        android:icon="@drawable/baseline_account_circle_24"
+        />
+    <item android:id="@+id/nav_cirqle_Store"
+        android:title="Cirqle Store"
+        android:icon="@drawable/baselin_store"
+        />
+</menu>

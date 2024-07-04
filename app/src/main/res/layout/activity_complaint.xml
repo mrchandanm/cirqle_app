@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white"
+>
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Complaint Box"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/dark_txt_gray"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <ImageButton
+            android:id="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:contentDescription="Close" />
+
+    </LinearLayout>
+
+    <!-- Complaint Title -->
+<!--    <EditText-->
+<!--        android:id="@+id/complaint_title"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter complaint title"-->
+<!--        android:inputType="text"-->
+<!--        android:maxLines="1"-->
+<!--        android:padding="8dp" />-->
+
+    <!-- Complaint Description -->
+    <EditText
+        android:id="@+id/complaint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter complaint description"
+        android:inputType="textMultiLine"
+        android:minLines="9"
+        android:padding="8dp"
+        android:textColor="@color/dark_txt_gray"
+        android:background="@drawable/et_rounded_corner_background"
+        android:textColorHint="@color/txt_gray"/>
+
+
+    <!-- Submit Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_medium"
+        android:background="@drawable/search_bg"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"/>
+
+
+</LinearLayout>

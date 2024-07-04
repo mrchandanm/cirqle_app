@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".FunFeeds.AddFeedActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_vertical"
+            android:text="Add Your Doubt"
+            android:textColor="@color/primary_secondary"
+            android:textSize="25sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider_gray" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Submit"
+                android:layout_gravity="end"
+                android:background="@drawable/tab_btn_layout_bakground"
+                android:backgroundTint="@color/primary_secondary"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/anonymosSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Post as anonymous"
+                    android:textColor="@color/txt_gray"
+                    app:switchPadding="10dp"
+                    app:trackTint="@color/light_gray" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="8dp"
+                android:text="Question"
+                android:textColor="@color/primary_secondary"
+                android:textSize="15sp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/question_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/primary_secondary"
+                android:hint="Ask Your Doubt"
+                android:padding="8dp"
+                android:textColor="@color/dark_txt_gray"
+                android:textColorHint="@color/txt_gray" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="8dp">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/add_photo_btn"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Add Photo"
+                    android:background="@drawable/tv_btn_selector"
+                    android:padding="8dp"
+                    android:layout_margin="8dp"
+                    android:textColor="@color/primary_secondary"
+                    android:drawableStart="@drawable/baseline_add_a_photo_24"
+                    android:paddingStart="10dp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/add_poll_btn"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Add Poll"
+                    android:background="@drawable/tv_btn_selector"
+                    android:padding="8dp"
+                    android:layout_margin="8dp"
+                    android:textColor="@color/primary_secondary"
+                    android:drawableStart="@drawable/baseline_poll_24"
+                    android:paddingStart="10dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/poll_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_gray" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Options"
+                    android:textColor="@color/txt_gray" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="option 1"
+                    android:textColorHint="@color/txt_gray"
+                    app:boxStrokeColor="@color/primary_secondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/txt_gray"
+                    app:hintTextColor="@color/primary_secondary"
+                    app:startIconDrawable="@drawable/baseline_playlist_add_24"
+                    app:startIconTint="@color/primary_secondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/option_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:textColor="@color/black" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="Opion 2"
+                    android:textColorHint="@color/txt_gray"
+                    app:boxStrokeColor="@color/primary_secondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/txt_gray"
+                    app:hintTextColor="@color/primary_secondary"
+                    app:startIconDrawable="@drawable/baseline_playlist_add_24"
+                    app:startIconTint="@color/primary_secondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/option_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/option_3_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="Opion 3"
+                    android:textColorHint="@color/txt_gray"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/primary_secondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/txt_gray"
+                    app:hintTextColor="@color/primary_secondary"
+                    app:startIconDrawable="@drawable/baseline_playlist_add_24"
+                    app:startIconTint="@color/primary_secondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/option_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/option_4_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="Opion 4"
+                    android:textColorHint="@color/txt_gray"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/primary_secondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/txt_gray"
+                    app:hintTextColor="@color/primary_secondary"
+                    app:startIconDrawable="@drawable/baseline_playlist_add_24"
+                    app:startIconTint="@color/primary_secondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/option_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/option_5_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="Opion 5"
+                    android:textColorHint="@color/txt_gray"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/primary_secondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/txt_gray"
+                    app:hintTextColor="@color/primary_secondary"
+                    app:startIconDrawable="@drawable/baseline_playlist_add_24"
+                    app:startIconTint="@color/primary_secondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/option_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/option_6_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="Opion 6"
+                    android:textColorHint="@color/txt_gray"
+                    android:visibility="gone"
+                    app:boxStrokeColor="@color/primary_secondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/txt_gray"
+                    app:hintTextColor="@color/primary_secondary"
+                    app:startIconDrawable="@drawable/baseline_playlist_add_24"
+                    app:startIconTint="@color/primary_secondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/option_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:inputType="text"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/delete_option_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/tab_btn_layout_bakground"
+                    android:padding="10dp"
+                    android:src="@drawable/baseline_delete_24"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/add_option_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/tab_btn_layout_bakground"
+                    android:drawableEnd="@drawable/baseline_add_24"
+                    android:drawableTint="@color/black"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="15dp"
+                    android:text="Add"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/viewpager_bg"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

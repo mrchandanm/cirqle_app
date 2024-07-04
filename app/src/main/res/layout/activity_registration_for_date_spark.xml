@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DateSpark.RegistrationForDateSparkActivity"
+    android:background="@color/datespark_primary"
+    android:gravity="center"
+    android:layout_gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date Spark"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:layout_marginTop="30dp"/>
+    <ProgressBar
+        android:id="@+id/pg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/images_layout"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:elevation="40dp"
+        android:layout_alignParentBottom="true"
+        android:padding="20dp"
+        app:cardElevation="20dp"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="40dp"
+        android:background="@color/white"
+        app:cardBackgroundColor="@color/white"
+        android:visibility="gone"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_marginBottom="20dp"
+            >
+
+           <androidx.viewpager2.widget.ViewPager2
+               android:id="@+id/viewpage_image"
+               android:layout_weight="1"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:visibility="gone"
+               />
+            <LinearLayout
+                android:id="@+id/add_photo_layout"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+                <TextView
+
+                    android:id="@+id/add_photo"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/baseline_add_a_photo_24"
+                    android:backgroundTint="@color/disabled_gray" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Some Photos"
+                    android:textSize="17sp"
+                    android:textColor="@color/txt_gray"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submit_btn"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/textview_btn_selector"
+                android:text="Submit"
+                android:backgroundTint="@color/datespark_primary"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="25dp"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/relationship_type_layout"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:elevation="40dp"
+        android:layout_alignParentBottom="true"
+        android:padding="20dp"
+        app:cardElevation="20dp"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="40dp"
+        android:visibility="gone"
+        android:background="@color/white"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What type of relationship are you looking for?"
+                android:textSize="25sp"
+                android:textColor="@color/txt_gray"
+                android:layout_marginBottom="20dp"/>
+            <RadioGroup
+                android:id="@+id/relationship_type_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <RadioButton
+                    android:id="@+id/casual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:text="Casual, just exploring options"
+                    android:textStyle="bold"
+                    android:buttonTint="@color/datespark_primary"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="10dp"/>
+                <RadioButton
+                    android:id="@+id/relationship"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:text="Serious, looking for something long-term"
+                    android:textStyle="bold"
+                    android:buttonTint="@color/datespark_primary"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="10dp"/>
+                <RadioButton
+                    android:id="@+id/not_sure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:text="Not sure yet, open to see where things go"
+                    android:textStyle="bold"
+                    android:buttonTint="@color/datespark_primary"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="10dp"/>
+            </RadioGroup>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/next_btn"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/textview_btn_selector"
+                android:text="Next"
+                android:backgroundTint="@color/datespark_primary"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="25dp"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "367161534651",
+    "project_id": "cirqle-42ece",
+    "storage_bucket": "cirqle-42ece.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367161534651:android:374daea310eeebea0c619e",
+        "android_client_info": {
+          "package_name": "cirqle.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNMV6YtyV4OwpszvnIVqcOauK7I-fUM6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367161534651:android:d5809c43da5e39100c619e",
+        "android_client_info": {
+          "package_name": "com.cirql.cirqlebusinessapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNMV6YtyV4OwpszvnIVqcOauK7I-fUM6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

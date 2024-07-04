@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+    <TextView
+        android:id="@+id/college_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="17sp"
+        android:text="colleg1 hgvjvhvj hbhbjj kjbkjbjkbkj  kjbkjbkjnkj kjbkjnkj jknkjnk "
+        android:padding="8dp"
+        android:elevation="11dp"
+        android:background="@drawable/et_rounded_corner_background"
+        android:textColor="@color/primary_secondary"
+        />
+
+</LinearLayout>

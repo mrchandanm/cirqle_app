@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+    android:background="@color/white"
+   >
+    <TextView
+        android:id="@+id/dateSlot"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="07:04:2024"
+        android:textSize="20sp"
+        android:textColor="@color/txt_gray"
+        android:fontFamily="@font/poppins_medium"
+        android:padding="8dp"
+        android:gravity="center"
+        android:background="@drawable/tab_unselected_bg"/>
+
+</LinearLayout>

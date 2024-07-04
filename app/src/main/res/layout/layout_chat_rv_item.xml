@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:gravity="center"
+    android:background="@drawable/selector_chat">
+
+    <cirqle.com.customLayout.CircularImageView
+        android:id="@+id/profile_pic_iv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circular_image_view"
+        android:src="@drawable/icon_person"
+        android:scaleType="centerCrop"
+        />
+    <LinearLayout
+        android:id="@+id/chat_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:layout_marginStart="5dp">
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_medium"/>
+        <TextView
+            android:id="@+id/last_message_tv"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last message"
+            android:gravity="center_vertical"
+            android:textColor="@color/dark_txt_gray"
+            android:textSize="12sp"
+            android:fontFamily="@font/poppins_medium"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider_gray"/>
+    </LinearLayout>
+
+
+</LinearLayout>

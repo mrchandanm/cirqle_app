@@ -1,0 +1,12 @@
+<!-- custom_spinner_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <item android:right="8dp" android:top="8dp" android:bottom="8dp">
+        <bitmap android:src="@drawable/baseline_arrow_drop_down_24" android:gravity="end|center_vertical" />
+    </item>
+</layer-list>
