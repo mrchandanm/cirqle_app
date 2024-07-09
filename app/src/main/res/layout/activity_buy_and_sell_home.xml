@@ -203,6 +203,11 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -218,10 +223,57 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               tools:listitem="@layout/layout_but_and_sell_post"/>
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:shimmer_auto_start="true"
+                app:shimmer_base_alpha="0.7"
+                app:shimmer_highlight_alpha="0.9"
+                app:shimmer_duration="800"
+                android:visibility="gone">
+
+                <!-- Your loading skeleton layout -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_marginBottom="8dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_marginBottom="8dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_marginBottom="8dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_marginBottom="8dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@android:color/darker_gray"
+                        android:layout_marginBottom="8dp"/>
+
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
         </LinearLayout>
 
 
     </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/buy_sell_fab_btn"
         android:layout_width="wrap_content"

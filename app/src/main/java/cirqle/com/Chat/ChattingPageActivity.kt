@@ -2,6 +2,7 @@ package cirqle.com.Chat
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -18,6 +19,7 @@ import cirqle.com.Utils.BuilderRetrofit
 import cirqle.com.Utils.Utility
 import cirqle.com.customLayout.CircularImageView
 import com.airbnb.lottie.LottieAnimationView
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.Gson
 import com.google.gson.JsonParser
@@ -36,6 +38,7 @@ class ChattingPageActivity : AppCompatActivity() {
     private lateinit var send_btn:LottieAnimationView
     private lateinit var adapter:MessageAdapter
     private lateinit var profilePicIv:CircularImageView
+    private lateinit var shimmerLayout: ShimmerFrameLayout
     private  var messageList= mutableListOf<MessageResponseModel>()
 
     private lateinit var mSocket:io.socket.client.Socket
@@ -78,11 +81,17 @@ class ChattingPageActivity : AppCompatActivity() {
         mSocket.connect()
         mSocket.emit("join-chat", chatId)
 
-
+        shimmerLayout = findViewById(R.id.shimmerLayout)
+        shimmerLayout.startShimmer()
+        shimmerLayout.visibility = View.VISIBLE
+        message_Rv.visibility= View.GONE
         val getmessageService = BuilderRetrofit.builService(ApiInterface::class.java)
         val reqCall=getmessageService.getallMessages(chatId!!)
         reqCall.enqueue(object: Callback<ArrayList<MessageResponseModel>>{
             override fun onResponse(call: Call<ArrayList<MessageResponseModel>>, response: Response<ArrayList<MessageResponseModel>>) {
+                shimmerLayout.stopShimmer()
+                shimmerLayout.visibility = View.GONE
+                message_Rv.visibility= View.VISIBLE
                 messageList=response.body()!!
                 val layoutManager = LinearLayoutManager(this@ChattingPageActivity)
                 layoutManager.stackFromEnd = true

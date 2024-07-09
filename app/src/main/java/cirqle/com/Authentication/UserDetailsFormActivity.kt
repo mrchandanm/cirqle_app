@@ -72,7 +72,15 @@ class UserDetailsFormActivity : AppCompatActivity() {
             }
 
         };
-
+        // Show all items when the AutoCompleteTextView is clicked
+        select_college.setOnFocusChangeListener { view, hasFocus ->
+            if (hasFocus) {
+                select_college.showDropDown()
+            }
+            else{
+                select_college.dismissDropDown()
+            }
+        }
 
         //**********************************Radio Button****************************************************
         gender_radio_group.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { radioGroup, i ->
@@ -201,9 +209,16 @@ class UserDetailsFormActivity : AppCompatActivity() {
         //**********************************Select College search ****************************************************
         val datalist: ArrayList<String> = ArrayList()
         datalist.add("Indian Institute of Technology, Patna")
+        datalist.add("Indian Institute of Technology, Delhi")
+        datalist.add("Indian Institute of Technology, Bombay")
+        datalist.add("Indian Institute of Technology, Madras")
+        datalist.add("Indian Institute of Technology, kanpur")
 
         val adapter=SearchAndSelectAdapter(this,android.R.layout.simple_list_item_2,datalist)
         select_college.setAdapter(adapter)
+
+
+
         //**********************************Select College search****************************************************
     }
 }

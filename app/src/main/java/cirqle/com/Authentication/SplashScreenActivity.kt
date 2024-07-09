@@ -18,10 +18,15 @@ class SplashScreenActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-
+            val token=Utility.getStringLocally(this@SplashScreenActivity,"token")
+            if(token.isNullOrBlank()){
+                startActivity(Intent(this@SplashScreenActivity,LoginActivity::class.java))
+            }
+            else {
+                startActivity(Intent(this@SplashScreenActivity, HomeActivity::class.java))
+            }
+            finish()
 //        val iLogin = Intent(this, LoginActivity::class.java)
- startActivity(Intent(this@SplashScreenActivity, HomeActivity::class.java))
-        finish()
 //        Timer().schedule(timerTask {
 //            val token=Utility.getStringLocally(this@SplashScreenActivity,"token")
 //            if(token.isNullOrBlank()){

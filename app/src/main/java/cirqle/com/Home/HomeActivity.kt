@@ -1,11 +1,16 @@
 package cirqle.com.Home
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import cirqle.com.Account.AccountFragment
@@ -14,6 +19,7 @@ import cirqle.com.CirqleStore.CirqleStoreActivity
 import cirqle.com.CirqleStore.CirqleStoreFragment
 import cirqle.com.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.messaging.FirebaseMessaging
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var bottom_nav:BottomNavigationView
@@ -30,6 +36,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var chat_tv:TextView
     private lateinit var profile_icon:TextView
     private lateinit var profile_tv:TextView
+    private val NOTIFICATION_PERMISSION_REQUEST_CODE=1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -37,6 +44,12 @@ class HomeActivity : AppCompatActivity() {
         loadfrag(HomeFragment(),0)
         home_icon.backgroundTintList = ContextCompat.getColorStateList(this, R.color.primary_secondary)
         home_tv.setTextColor(ContextCompat.getColor(this, R.color.primary_secondary))
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), NOTIFICATION_PERMISSION_REQUEST_CODE)
+            }
+        }
 
         home_layout.setOnClickListener {
             loadfrag(HomeFragment(),1)
@@ -113,6 +126,16 @@ class HomeActivity : AppCompatActivity() {
             ft.replace(R.id.home_container, fragment!!)
         }
         ft.commit()
+    }
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == NOTIFICATION_PERMISSION_REQUEST_CODE) {
+            if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                // Permission granted
+            } else {
+                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     fun init(){

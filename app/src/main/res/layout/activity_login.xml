@@ -8,12 +8,20 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:gravity="center">
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:elevation="15dp"
+        android:layout_marginTop="-140dp"
+        app:lottie_fileName="commi.json"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:background="@drawable/login_register_background"
         android:layout_marginTop="-365dp"
-        android:layout_marginBottom="50dp">
+        android:layout_marginBottom="10dp">
     </ImageView>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

@@ -66,6 +66,9 @@ class TripPostAdapter(private var context:Context, private var list:kotlin.colle
                 PermissionCallBack.requestPermission(Manifest.permission.CALL_PHONE)
             }
         }
+        if(userId==list[pos].user._id){
+            holder.chat_btn.visibility= View.GONE
+        }
         holder.chat_btn.setOnClickListener{
             val getmessageService = BuilderRetrofit.builService(ApiInterface::class.java)
             val reqCall=getmessageService.accessChat(userId!!,list[pos].user._id.toString())

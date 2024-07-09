@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.viewpager2.widget.ViewPager2
@@ -55,7 +56,9 @@ class UserPostPageActivity : AppCompatActivity() {
             viewpager_imageshow.adapter = adapter
 
         }
-
+        if(UserId==postDetails?.owner?._id){
+            chat_btn.visibility= View.GONE
+        }
         chat_btn.setOnClickListener{
 
             val getmessageService = BuilderRetrofit.builService(ApiInterface::class.java)

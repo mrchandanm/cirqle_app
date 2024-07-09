@@ -6,6 +6,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -71,7 +72,9 @@ class LostAndFoundUserPageActivity : AppCompatActivity() {
             }
 
         }
-
+        if(UserId==postDetails?.user?._id){
+            chat_btn.visibility= View.GONE
+        }
         chat_btn.setOnClickListener{
             val getmessageService = BuilderRetrofit.builService(ApiInterface::class.java)
             val reqCall=getmessageService.accessChat(UserId,postDetails?.user?._id.toString())

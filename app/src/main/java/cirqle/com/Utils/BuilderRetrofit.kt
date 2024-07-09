@@ -5,9 +5,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object BuilderRetrofit {
-    //val url="https://cirqle-backend.onrender.com/api/v1/";
+    val url="https://cirqle-backend.onrender.com/api/v1/";
     // val url="http://192.168.151.251:8080/api/v1/";
-    val url="http://192.168.203.251:8080/api/v1/";
+    //val url="http://192.168.203.251:8080/api/v1/";
 
     //create okhttp clientc
     private val okHttpClient = OkHttpClient.Builder()

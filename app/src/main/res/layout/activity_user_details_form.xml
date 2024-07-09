@@ -129,16 +129,18 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
 
-  <com.google.android.material.textfield.TextInputLayout
+
+    <com.google.android.material.textfield.TextInputLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:hint="Choose your College"
       style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-      app:endIconMode="clear_text"
       android:backgroundTint="@color/black"
       app:hintTextColor="@color/primary_secondary"
       android:textColorHint="@color/txt_gray"
+        app:endIconDrawable="@drawable/baseline_arrow_drop_down_24"
       app:endIconTint="@color/txt_gray"
+
       app:boxStrokeColor="@color/primary_secondary"
       app:startIconDrawable="@drawable/icon_college"
       app:startIconTint="@color/primary_secondary"
@@ -159,7 +161,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Hostel Name"
-        app:endIconMode="clear_text"
+       app:endIconDrawable="@drawable/baseline_arrow_drop_down_24"
         android:backgroundTint="@color/black"
         app:hintTextColor="@color/primary_secondary"
         android:textColorHint="@color/txt_gray"

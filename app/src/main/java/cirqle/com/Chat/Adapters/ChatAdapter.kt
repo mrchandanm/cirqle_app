@@ -1,5 +1,6 @@
 package cirqle.com.Chat.Adapters
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -22,7 +23,7 @@ import retrofit2.Response
 import java.util.*
 
 class ChatAdapter(private var context:Context,private var list:List<ChatResponseModel>, private var userId:String ): RecyclerView.Adapter<ChatAdapter.ViewHolder>(),Filterable {
-
+    private lateinit var progressDialog: Dialog
     private var filteredList: kotlin.collections.List<ChatResponseModel> = list
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -60,7 +61,11 @@ class ChatAdapter(private var context:Context,private var list:List<ChatResponse
         }
         holder.last_message.text=lastmessage
 
+        progressDialog = Dialog(context)
+        progressDialog.setCancelable(false)
+        progressDialog.setContentView(R.layout.layout_loading_progress_dialog)
         holder.chat_layout.setOnClickListener{
+            progressDialog.show()
             val getmessageService = BuilderRetrofit.builService(ApiInterface::class.java)
             val sender=if(list[position].users[0]._id==userId){
                 filteredList[position].users[1]
@@ -71,7 +76,7 @@ class ChatAdapter(private var context:Context,private var list:List<ChatResponse
             reqCall.enqueue(object: Callback<ChatResponseModel> {
                 override fun onResponse(call: Call<ChatResponseModel>, response: Response<ChatResponseModel>) {
                     val intent= Intent(context, ChattingPageActivity::class.java)
-
+                    progressDialog.dismiss()
                     intent.putExtra("postUserId",sender._id.toString())
                     intent.putExtra("chatId",response.body()?._id)
                     intent.putExtra("userName",sender.userName)
@@ -80,6 +85,7 @@ class ChatAdapter(private var context:Context,private var list:List<ChatResponse
                 }
 
                 override fun onFailure(call: Call<ChatResponseModel>, t: Throwable) {
+                    progressDialog.dismiss()
                     Toast.makeText(context, "failed to access chat", Toast.LENGTH_SHORT).show()
                     Log.d("accessChat", "onFailure: "+t.message)
                 }

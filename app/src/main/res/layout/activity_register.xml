@@ -8,12 +8,15 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:gravity="center">
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:background="@drawable/login_register_background"
         android:layout_marginTop="-300dp">
     </ImageView>
+
+
     <ProgressBar
         android:layout_weight="1"
         android:id="@+id/progress_bar"

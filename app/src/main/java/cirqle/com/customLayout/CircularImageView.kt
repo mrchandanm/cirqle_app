@@ -13,7 +13,7 @@ class CircularImageView @JvmOverloads constructor(context: Context, attrs: Attri
     private val clipPath = Path()
     private val rectF = RectF()
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         canvas?.let {
             rectF.set(0f, 0f, width.toFloat(), height.toFloat())
             clipPath.reset()

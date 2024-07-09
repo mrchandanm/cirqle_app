@@ -2,6 +2,7 @@ package cirqle.com.SeniorCirqle
 
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -90,12 +91,23 @@ class SeniorCirqleHomeActivity : AppCompatActivity() {
 
 
         add_doubt_fab_btn.setOnClickListener{
-            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED) {
-                val intent=Intent(this@SeniorCirqleHomeActivity,AddDoubtsActivity::class.java)
-                startActivity(intent)
+            if (Build.VERSION.SDK_INT >= 33 && Build.VERSION.SDK_INT < 35) {
+                if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED) {
+                    val intent=Intent(this@SeniorCirqleHomeActivity,AddDoubtsActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_MEDIA_IMAGES), REQUEST_STORAGE)
+                }
             } else {
-                ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_MEDIA_IMAGES), REQUEST_STORAGE)
+                if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                    val intent=Intent(this@SeniorCirqleHomeActivity,AddDoubtsActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), REQUEST_STORAGE)
+                }
             }
+
+
 
         }
 

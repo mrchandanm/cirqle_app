@@ -160,6 +160,9 @@ class AskDoubtsPostAdapter(private var context: Context, private var list:Mutabl
             holder.full_question_tv.visibility=View.VISIBLE
             holder.see_more_btn.visibility=View.GONE
         }
+        if(userId==list[pos].user._id){
+            holder.chat_btn.visibility=View.GONE
+        }
         holder.chat_btn.setOnClickListener{
             val getmessageService = BuilderRetrofit.builService(ApiInterface::class.java)
             val reqCall=getmessageService.accessChat(userId,filteredList[pos].user._id.toString())
